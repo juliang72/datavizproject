@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "hconcat": [{"layer": [{"mark": {"type": "point"}, "encoding": {"color": {"condition": {"param": "param_1", "field": "Temperature Groups"}, "value": "lightgray"}, "tooltip": [{"field": "Amount of Steps", "title": "Amount of Steps", "type": "quantitative"}, {"field": "Date", "timeUnit": "monthdate", "title": "Date (2023)", "type": "nominal"}, {"field": "Weather", "title": "Weather Type", "type": "nominal"}, {"field": "Temperature", "title": "Temperature (\u00b0 Fahrenheit)", "type": "quantitative"}], "x": {"field": "Date", "sort": null, "timeUnit": "monthdate", "title": "Date", "type": "nominal"}, "y": {"field": "Amount of Steps", "title": "Amount of Steps", "type": "quantitative"}}, "name": "view_1", "title": "Amount of Steps Throughout December", "transform": [{"filter": {"param": "param_2"}}]}, {"mark": {"type": "rule", "color": "red"}, "encoding": {"y": {"aggregate": "mean", "field": "Amount of Steps", "type": "quantitative"}}}], "width": 550}, {"mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3}, "encoding": {"color": {"condition": {"param": "param_1", "field": "Temperature Groups"}, "value": "lightgray"}, "tooltip": [{"field": "Amount of Steps", "title": " Amount of Steps", "type": "quantitative"}, {"field": "Temperature", "title": "Temperature (\u00b0 Fahrenheit)", "type": "quantitative"}], "x": {"field": "Date", "timeUnit": "day", "title": "Day of Week", "type": "nominal"}, "y": {"field": "Amount of Steps", "title": "Total Amount of Steps", "type": "quantitative"}}, "name": "view_2", "title": "Total Steps Across Days of the Week", "transform": [{"filter": {"param": "param_2"}}], "width": 150}], "data": {"name": "data-8620eb9a81a80083f0293537b1dc83b7"}, "params": [{"name": "param_1", "select": {"type": "interval"}, "views": ["view_1"]}, {"name": "param_2", "select": {"type": "point", "fields": ["Weather"]}, "bind": {"input": "select", "options": [null, "Cloudy", "Rain", "Sunny"], "labels": ["All", "Cloudy", "Rain", "Sunny"], "name": "Weather"}, "views": ["view_1", "view_2"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-8620eb9a81a80083f0293537b1dc83b7": [{"Date": "12/1/2023", "Amount of Steps": 14430, "Temperature": 54, "Weather": "Cloudy", "Temperature Groups": "50-60"}, {"Date": "12/2/2023", "Amount of Steps": 12227, "Temperature": 55, "Weather": "Cloudy", "Temperature Groups": "50-60"}, {"Date": "12/3/2023", "Amount of Steps": 5120, "Temperature": 45, "Weather": "Rain", "Temperature Groups": "40-50"}, {"Date": "12/4/2023", "Amount of Steps": 16314, "Temperature": 52, "Weather": "Cloudy", "Temperature Groups": "50-60"}, {"Date": "12/5/2023", "Amount of Steps": 10674, "Temperature": 37, "Weather": "Cloudy", "Temperature Groups": "30-40"}, {"Date": "12/6/2023", "Amount of Steps": 2537, "Temperature": 36, "Weather": "Cloudy", "Temperature Groups": "30-40"}, {"Date": "12/7/2023", "Amount of Steps": 9184, "Temperature": 34, "Weather": "Cloudy", "Temperature Groups": "30-40"}, {"Date": "12/8/2023", "Amount of Steps": 12972, "Temperature": 41, "Weather": "Cloudy", "Temperature Groups": "40-50"}, {"Date": "12/9/2023", "Amount of Steps": 17204, "Temperature": 50, "Weather": "Cloudy", "Temperature Groups": "50-60"}, {"Date": "12/10/2023", "Amount of Steps": 1298, "Temperature": 59, "Weather": "Cloudy", "Temperature Groups": "50-60"}, {"Date": "12/11/2023", "Amount of Steps": 10108, "Temperature": 48, "Weather": "Cloudy", "Temperature Groups": "40-50"}, {"Date": "12/12/2023", "Amount of Steps": 14064, "Temperature": 45, "Weather": "Sunny", "Temperature Groups": "40-50"}, {"Date": "12/13/2023", "Amount of Steps": 16133, "Temperature": 45, "Weather": "Sunny", "Temperature Groups": "40-50"}, {"Date": "12/14/2023", "Amount of Steps": 11025, "Temperature": 36, "Weather": "Sunny", "Temperature Groups": "30-40"}, {"Date": "12/15/2023", "Amount of Steps": 14887, "Temperature": 54, "Weather": "Sunny", "Temperature Groups": "50-60"}, {"Date": "12/16/2023", "Amount of Steps": 9224, "Temperature": 48, "Weather": "Sunny", "Temperature Groups": "40-50"}, {"Date": "12/17/2023", "Amount of Steps": 4048, "Temperature": 48, "Weather": "Cloudy", "Temperature Groups": "40-50"}, {"Date": "12/18/2023", "Amount of Steps": 6094, "Temperature": 59, "Weather": "Rain", "Temperature Groups": "50-60"}, {"Date": "12/19/2023", "Amount of Steps": 10604, "Temperature": 48, "Weather": "Sunny", "Temperature Groups": "40-50"}, {"Date": "12/20/2023", "Amount of Steps": 12927, "Temperature": 43, "Weather": "Sunny", "Temperature Groups": "40-50"}, {"Date": "12/21/2023", "Amount of Steps": 10455, "Temperature": 36, "Weather": "Sunny", "Temperature Groups": "30-40"}, {"Date": "12/22/2023", "Amount of Steps": 12114, "Temperature": 34, "Weather": "Sunny", "Temperature Groups": "30-40"}, {"Date": "12/23/2023", "Amount of Steps": 9587, "Temperature": 41, "Weather": "Cloudy", "Temperature Groups": "40-50"}, {"Date": "12/24/2023", "Amount of Steps": 1734, "Temperature": 47, "Weather": "Cloudy", "Temperature Groups": "40-50"}, {"Date": "12/25/2023", "Amount of Steps": 6289, "Temperature": 50, "Weather": "Sunny", "Temperature Groups": "50-60"}, {"Date": "12/26/2023", "Amount of Steps": 3657, "Temperature": 50, "Weather": "Cloudy", "Temperature Groups": "50-60"}, {"Date": "12/27/2023", "Amount of Steps": 9280, "Temperature": 50, "Weather": "Rain", "Temperature Groups": "50-60"}, {"Date": "12/28/2023", "Amount of Steps": 4802, "Temperature": 46, "Weather": "Rain", "Temperature Groups": "40-50"}, {"Date": "12/29/2023", "Amount of Steps": 8082, "Temperature": 45, "Weather": "Rain", "Temperature Groups": "40-50"}, {"Date": "12/30/2023", "Amount of Steps": 12117, "Temperature": 45, "Weather": "Rain", "Temperature Groups": "40-50"}, {"Date": "12/31/2023", "Amount of Steps": 6859, "Temperature": 41, "Weather": "Sunny", "Temperature Groups": "40-50"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
